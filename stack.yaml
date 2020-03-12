@@ -9,3 +9,8 @@ extra-deps:
   - fused-effects-lens-0.2.0.0
   - fastsum-0.1.1.0
   - http-media-0.8.0.0
+
+nix:
+  path: [nixpkgs=./nix]
+  packages:
+    - zlib
