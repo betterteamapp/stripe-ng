@@ -1,4 +1,5 @@
-.stack-work/
-stripe-ng.cabal
 *~
 .envrc.private
+.stack-work/
+/dist-newstyle
+stripe-ng.cabal
