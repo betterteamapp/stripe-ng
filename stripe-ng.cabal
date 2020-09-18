@@ -1,0 +1,188 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 7866ec3076e0b79fc2a26f5190370d68e11b8347c4305f2f7470ea8489f4b02e
+
+name:           stripe-ng
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/iand675/stripe-ng#readme>
+homepage:       https://github.com/iand675/stripe-ng#readme
+bug-reports:    https://github.com/iand675/stripe-ng/issues
+author:         Ian Duncan
+maintainer:     ian@iankduncan.com
+copyright:      Ian Duncan
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/iand675/stripe-ng
+
+flag strict-json-check
+  description: Fail JSON decoding if properties are unused by results. Primarily intended for nightly automated testing.
+  manual: True
+  default: False
+
+library
+  exposed-modules:
+      Stripe
+      Stripe.Balance
+      Stripe.Billing.Coupons
+      Stripe.Billing.Discounts
+      Stripe.Billing.InvoiceItems
+      Stripe.Billing.Invoices
+      Stripe.Billing.Plans
+      Stripe.Billing.Products
+      Stripe.Billing.SubscriptionItems
+      Stripe.Billing.Subscriptions
+      Stripe.Billing.UsageRecords
+      Stripe.Charges
+      Stripe.Connect.Account
+      Stripe.Connect.ApplicationFeeRefunds
+      Stripe.Connect.ApplicationFees
+      Stripe.Connect.CountrySpecs
+      Stripe.Connect.ExternalAccounts
+      Stripe.Connect.TopUps
+      Stripe.Connect.TransferReversals
+      Stripe.Connect.Transfers
+      Stripe.Core
+      Stripe.Customers
+      Stripe.Disputes
+      Stripe.Errors
+      Stripe.Event
+      Stripe.Events
+      Stripe.Files
+      Stripe.FilesLinks
+      Stripe.Fraud.RadarReviews
+      Stripe.Issuing.Authorizations
+      Stripe.Issuing.Cardholders
+      Stripe.Issuing.Cards
+      Stripe.Issuing.Disputes
+      Stripe.Issuing.Transactions
+      Stripe.Lens
+      Stripe.Orders
+      Stripe.Orders.OrderItems
+      Stripe.Orders.Returns
+      Stripe.Orders.SKUs
+      Stripe.PaymentMethods.BankAccounts
+      Stripe.PaymentMethods.Cards
+      Stripe.PaymentMethods.Sources
+      Stripe.Payouts
+      Stripe.Refunds
+      Stripe.Sigma.ScheduledQueries
+      Stripe.Terminal.ConnectionTokens
+      Stripe.Terminal.Locations
+      Stripe.Terminal.PaymentIntents
+      Stripe.Terminal.Readers
+      Stripe.Tokens
+      Stripe.Utils
+  other-modules:
+      Paths_stripe_ng
+  hs-source-dirs:
+      src
+  default-extensions: DeriveGeneric OverloadedStrings QuasiQuotes RecordWildCards TypeApplications FlexibleContexts
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , conduit
+    , exceptions
+    , hashable
+    , http-api-data
+    , http-client
+    , http-client-tls
+    , http-conduit
+    , http-types
+    , lens
+    , mtl
+    , pretty-show
+    , scientific
+    , tagged
+    , text
+    , time
+    , unordered-containers
+    , vector
+  if flag(strict-json-check)
+    cpp-options: -DSTRICT_JSON_CHECK
+  default-language: Haskell2010
+
+executable stripe-ng-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_stripe_ng
+  hs-source-dirs:
+      app
+  default-extensions: DeriveGeneric OverloadedStrings QuasiQuotes RecordWildCards TypeApplications FlexibleContexts
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , conduit
+    , exceptions
+    , hashable
+    , http-api-data
+    , http-client
+    , http-client-tls
+    , http-conduit
+    , http-types
+    , lens
+    , mtl
+    , pretty-show
+    , scientific
+    , stripe-ng
+    , tagged
+    , text
+    , time
+    , unordered-containers
+    , vector
+  default-language: Haskell2010
+
+test-suite stripe-ng-test
+  type: exitcode-stdio-1.0
+  main-is: Driver.hs
+  other-modules:
+      BalanceTest
+      ChargeTest
+      JsonTest
+      ProductTest
+      UtilsTest
+      Paths_stripe_ng
+  hs-source-dirs:
+      test
+  default-extensions: DeriveGeneric OverloadedStrings QuasiQuotes RecordWildCards TypeApplications FlexibleContexts
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , aeson-qq
+    , base >=4.7 && <5
+    , bytestring
+    , conduit
+    , exceptions
+    , hashable
+    , http-api-data
+    , http-client
+    , http-client-tls
+    , http-conduit
+    , http-types
+    , lens
+    , mtl
+    , pretty-show
+    , scientific
+    , stripe-ng
+    , tagged
+    , tasty
+    , tasty-discover
+    , tasty-hspec
+    , text
+    , time
+    , unordered-containers
+    , vector
+  default-language: Haskell2010
