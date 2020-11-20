@@ -462,7 +462,7 @@ dischargeNullable isNull_ rt = if isNull_
   else rt
 
 builtInTypeResolvers ::
-     forall m sig. (Carrier sig m, SchemaDescent sig, GlobalState sig, Monad m)
+     forall m sig. (Carrier sig m, SchemaDescent sig, GlobalState sig, Monad m, MonadFail m)
   => TypeResolvers m
 builtInTypeResolvers = TypeResolvers
   { typeResolvers =
@@ -550,7 +550,7 @@ runResolvers ::
 runResolvers rs s = firstSuccess $ map (\tr -> tr rs s) $ typeResolvers rs
 
 renderType ::
-     (Monad m, Carrier sig m, SchemaDescent sig)
+     (Monad m, Carrier sig m, SchemaDescent sig, MonadFail m)
   => TypeResolvers m
   -> Referenceable Schema
   -> m RenderedType

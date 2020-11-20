@@ -5,13 +5,6 @@
 
 packages:
 - completed:
-    hackage: ede-0.2.9@sha256:062198b65a661f015bff53c15d53d0b63eac547d44b09d96b7fb8d27752dfc79,3561
-    pantry-tree:
-      size: 5392
-      sha256: ee8d76f8f1ca483f29233498833c7159774efc3c0cb14027703cefac79c41315
-  original:
-    hackage: ede-0.2.9
-- completed:
     hackage: fused-effects-0.5.0.1@sha256:a2f5fcd127afbe57a18e0d6c4edb5fee3d4a50411b1007773e250e69f16f3055,4387
     pantry-tree:
       size: 2400
@@ -26,12 +19,12 @@ packages:
   original:
     hackage: fused-effects-lens-0.2.0.0
 - completed:
-    hackage: fastsum-0.1.1.0@sha256:bbc8c27b6dc100a94cef28ab1bebe38155cd95e00e8d27e025a137c8b74118e2,2280
+    hackage: fastsum-0.1.1.1@sha256:ddb41e30396cc091845596130fb441150118086c6f227c0bd5ce30dadf9dad56,2398
     pantry-tree:
-      size: 430
-      sha256: 1f74dac14478572e175bf8e12de4500711c47fdcc56cb630eae3732e0410aa1d
+      size: 431
+      sha256: 45e007bf4395315bf2cdb5b17f1e956739d836a53fa9dd022ea3d0b123ded8f5
   original:
-    hackage: fastsum-0.1.1.0
+    hackage: fastsum-0.1.1.1
 - completed:
     hackage: http-media-0.8.0.0@sha256:05215cafddb1a34cd70b3f1247953a753a4256a87228b68b8e748cdffa827363,4110
     pantry-tree:
@@ -39,9 +32,34 @@ packages:
       sha256: af6f4bfa3ee48a846c35e22aeec5b86c052eb05d6b25f6b0c2713bf0760bc80c
   original:
     hackage: http-media-0.8.0.0
+- completed:
+    hackage: text-format-0.3.2@sha256:2a3fc17cf87120fcfdbca62a0da59759755549285841cdc1483081c35fb3d115,1814
+    pantry-tree:
+      size: 1029
+      sha256: 2db26ddb77184186e0d5b2b020bdfbeb044c168024767b1fa3691682ca618896
+  original:
+    hackage: text-format-0.3.2@sha256:2a3fc17cf87120fcfdbca62a0da59759755549285841cdc1483081c35fb3d115,1814
+- completed:
+    hackage: xmlbf-0.6.1@sha256:57867fcb39e0514d17b3328ff5de8d241a18482fc89bb742d9ed820a6a2a5187,1540
+    pantry-tree:
+      size: 313
+      sha256: 4bd60a363c4aaa6aee8d52efedc5be07065f01fd1e989da022c7cecc41d98651
+  original:
+    hackage: xmlbf-0.6.1@sha256:57867fcb39e0514d17b3328ff5de8d241a18482fc89bb742d9ed820a6a2a5187,1540
+- completed:
+    name: ede
+    version: 0.2.9
+    git: https://github.com/betterteamapp/ede
+    pantry-tree:
+      size: 5966
+      sha256: 15c2b6c16d2b2fbc30f56b12365b511f1d8d742a984426a3e968f7379d5f4a4c
+    commit: 27ba1c42a65772ab9de0408f0238ed6b0f0c2e56
+  original:
+    git: https://github.com/betterteamapp/ede
+    commit: 27ba1c42a65772ab9de0408f0238ed6b0f0c2e56
 snapshots:
 - completed:
-    size: 495801
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/13/11.yaml
-    sha256: 835062158db2b3ebb8b9525d9662a02ebf9783e8f6a08a64684cd5546f847152
-  original: lts-13.11
+    size: 532414
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/16/22.yaml
+    sha256: e483fb88549fc0f454c190979bf35ac91c7aceff2c0e71e7d8edd11842d772d8
+  original: lts-16.22
