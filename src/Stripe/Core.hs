@@ -36,13 +36,13 @@ class StripeResult t a where
 instance (FromJSON t) => StripeResult t t where
   stripeResult (Tagged r) =
     case eitherDecode $ responseBody r of
-      Left err -> fail err
+      Left err -> error err
       Right ok -> pure ok
 
 instance (FromJSON t) => StripeResult t (Response t) where
   stripeResult (Tagged r) =
     case eitherDecode $ responseBody r of
-      Left err -> fail err
+      Left err -> error err
       Right ok -> pure (ok <$ r)
 
 instance StripeResult t () where
@@ -54,7 +54,7 @@ instance StripeResult t (Response L.ByteString) where
 instance (StripeResult t r) => StripeResult t (Value, r) where
   stripeResult r'@(Tagged r) =
     case eitherDecode $ responseBody r of
-      Left err -> fail err
+      Left err -> error err
       Right ok -> (,) <$> pure ok <*> stripeResult r'
 
 
@@ -146,7 +146,7 @@ newtype Timestamp = Timestamp { fromTimestamp :: UTCTime }
 instance FromJSON Timestamp where
   parseJSON = withScientific "Timestamp" $ \n -> do
     case toBoundedInteger n of
-      Nothing -> fail "Timestamp was not a bounded integer"
+      Nothing -> error "Timestamp was not a bounded integer"
       Just ts -> pure $ Timestamp $ posixSecondsToUTCTime $ realToFrac (ts :: Word)
 
 type Expandable a = Id a
